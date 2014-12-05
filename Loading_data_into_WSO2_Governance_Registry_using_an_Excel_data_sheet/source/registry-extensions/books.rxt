@@ -1,0 +1,39 @@
+<artifactType type="application/vnd.wso2-sample.books+xml" shortName="book" singularLabel="Book"
+              pluralLabel="Books"
+              hasNamespace="false" iconSet="27">
+    <storagePath>/books/@{namespace}/@{name}</storagePath>
+    <nameAttribute>overview_title</nameAttribute>
+    <namespaceAttribute>overview_publishedYear</namespaceAttribute>
+    <ui>
+        <list>
+            <column name="Title">
+                <data type="path" value="overview_title" href="@{storagePath}"/>
+            </column>
+            <column name="Author">
+                <data type="text" value="overview_author"/>
+            </column>
+        </list>
+    </ui>
+    <relationships>
+        <association type="publisher" target="@{overview_publisher}"/>
+    </relationships>
+    <content>
+        <table name="Overview">
+            <field type="text" required="true" readonly="true">
+                <name label="Title">Title</name>
+            </field>
+            <field type="text" required="true" readonly="true">
+                <name label="Author">Author</name>
+            </field>
+            <field type="text" path="true">
+                <name label="Publisher">Publisher</name>
+            </field>
+            <field type="text-area">
+                <name label="Annotation">Annotation</name>
+            </field>
+            <field type="text">
+                <name label="Published year">Published Year</name>
+            </field>
+        </table>
+    </content>
+</artifactType>

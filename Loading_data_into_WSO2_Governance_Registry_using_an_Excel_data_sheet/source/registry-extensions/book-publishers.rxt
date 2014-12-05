@@ -1,0 +1,24 @@
+<artifactType type="application/vnd.wso2-sample.publisher+xml" shortName="publisher" singularLabel="Book Publisher"
+              pluralLabel="Book Publishers"
+              hasNamespace="false" iconSet="27">
+    <storagePath>/book-publishers/@{overview_name}</storagePath>
+    <nameAttribute>overview_name</nameAttribute>
+    <ui>
+        <list>
+            <column name="Name">
+                <data type="text" value="overview_name"/>
+            </column>
+        </list>
+    </ui>
+    <content>
+        <table name="Overview">
+            <field type="text" required="true" readonly="true">
+                <name label="Name">Name</name>
+            </field>
+            <field type="text-area">
+                <name label="Description">Description</name>
+            </field>
+
+        </table>
+    </content>
+</artifactType>
